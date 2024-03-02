@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>270</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>MainMenuGame
+--
+
+--
+/getUserCommand()/
+/register()/
+/play()/
+/showScoreBoard/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>240</y>
+      <w>250</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+_+ user_command: str_
+_- valid_command: list [r, s, p, q]_
++ noPlayer: int (in range(2, 5))
++ gameAttempts: int (in range(5, 11))
++ playerBreakCode: dict { }
+_- represent_color: dict { }_
+--
+-
+- validateName()
+- validateCode()
+- register()
+- play()
+- showScoreBoard()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>290</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>WorldOfMastermind
+--
++ run(): (inGame: bool)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>530</y>
+      <w>210</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Feedback
+--
+_- key_peg: list ['K', 'W']_
+- attempts_left: int 
+- previous_attempts: int
+--
+- check_result()
+- display_feedback()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>450</y>
+      <w>220</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Player
+--
++ player_name: str
+_+ list_player: list [ ]_
++ score: int (= 0)
++ computer: list ['HAL9000', 'VIKI']
++ listGuess: list [ ] 
++ currentAttempts: int (= 0)
++ setCode: str
++ breakCode: str
++ gameCount: int (= 0)
+_- guess: str_
+--
+- makeGuess()
+- computerPlay()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>320</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>320</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>380</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>590</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+</diagram>

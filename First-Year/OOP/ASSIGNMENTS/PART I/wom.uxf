@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>45</y>
+      <w>333</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/MainMenuGame/
+--
+
+--
+/getUserCommand()/
+/register()/
+/play()/
+/showScoreBoard/
+--
+Responsibilities
+-- Plays as an interface
+-- Validate user input 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>9</y>
+      <w>306</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+__- validCommand = [ 'r', 's', 'p', 'q' ]__
+__+ list register = [ ]__
+__- validColor = [ 'R', 'G', 'B', 'Y', 'W', 'K' ]__
+__+ listObject = [ ]__
+--
++ getUserCommand(displayCommand): bool
++ validateInput(): int
++ register()
++ play()
++ showScoreBoard()
+--
+Responsibilities
+-- Get user input through userCommand
+-- Enable user to register
+-- Validate player name
+-- Manage and enable user to play game
+-- Store and display Score Board
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>99</y>
+      <w>171</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>WorldOfMastermind
+--
+
+--
++ run()
+--
+Resposibilities
+-- Start game by 
+calling getUserCommand</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>441</y>
+      <w>306</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- noPlayer: int 
+- noAttempts: int 
+- playerBreakCode = { name : code }
+- validColor = [ ]_
+- pList = [ ]
+- listObject = [ ] 
+- listAttempts = { name : attempts}
++ listScore = { name : score }
+--
++ getCode(name): str
++ setCode(): dict
++ makeGuess(): list
+
+--
+Responsibilities
+-- Manage and store player information in Game
+-- Enable player to take turn
+-- Enable player to set and guess code
+-- Generate randomly for computer player</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>135</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+run &gt;
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1053</x>
+      <y>315</y>
+      <w>63</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+has v
+m1=0..*
+m2= 2..4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>135</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+&lt; implements
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>765</y>
+      <w>333</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Computer
+--
+__computer = [ 'HAL900', 'VIKI' ]__
+- playerName: str
++ attempts: int ( = 0)
++ guess = [ ]
+--
++ computerSet(): str
+--
+Responsibilities
+-- Inherited from Player
+-- Automatically generate the code</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>513</y>
+      <w>333</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>Human
+--
+- playerName: str
++ score: int ( = 0)
++ attempts: int ( = 0)
++ guess = [ ]
++ listScore = [ score = 0 ]
++ average: int ( = 0)
+--
++ getAverage(): float
++ getName(): str
+--
+Responsibilities
+-- Inherited from Player
+-- Store information of object Human
+-- Get name of Human player (read only)
+-- Get average score
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>549</y>
+      <w>180</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;130.0;90.0;130.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>657</y>
+      <w>180</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;90.0;10.0;90.0;240.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>342</y>
+      <w>333</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Feedback
+--
+_- keyPegs = [ 'K', 'W' ]_
+--
++ check(key, playerBreakCode, makeGuess): str
+--
+Responsibilities
+-- Give feedback to user for each turn they make guess</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>270</y>
+      <w>342</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt; has
+m1=1
+m2=10..40</panel_attributes>
+    <additional_attributes>360.0;20.0;10.0;20.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>441</y>
+      <w>342</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt; receives
+m1=1
+m2=1..10</panel_attributes>
+    <additional_attributes>360.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
