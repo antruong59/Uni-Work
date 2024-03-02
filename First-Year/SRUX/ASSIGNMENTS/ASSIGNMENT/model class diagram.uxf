@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>13</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>741</x>
+      <y>260</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Physician
+--
+speciality</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1014</x>
+      <y>260</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Patient
+--
+patientName</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>858</x>
+      <y>273</y>
+      <w>182</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+&lt; admited by</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>715</x>
+      <y>182</y>
+      <w>468</w>
+      <h>247</h>
+    </coordinates>
+    <panel_attributes>A Hospital</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>858</x>
+      <y>325</y>
+      <w>182</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=0..*
+&lt; treated by</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>676</x>
+      <y>546</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Program
+--
+Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>975</x>
+      <y>546</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Course
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>715</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Lecturer
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>793</x>
+      <y>572</y>
+      <w>208</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..*
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>975</x>
+      <y>637</y>
+      <w>247</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+coordinated by v</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>637</y>
+      <w>156</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+directed by v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;100.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>403</x>
+      <y>546</y>
+      <w>130</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Student
+--
+Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>559</y>
+      <w>182</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1..*
+enroled in &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>455</y>
+      <w>650</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..*
+enroled in &gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;20.0;460.0;20.0;460.0;70.0</additional_attributes>
+  </element>
+</diagram>
