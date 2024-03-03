@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>707</y>
+      <w>266</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;data_class&gt;&gt;
+QuestionAnswerPair
+--
++ question : str
++ answer : str</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>182</y>
+      <w>399</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>main()
+--
+
+--
++ question_catalogue_access = QuestionCatalogueAccess(candidates_path)
++ matching_engine = MatchingEngine(question_catalogue_access)
++ question_log_access = QuestionLogAccess(questions_log_path)
++ manager = QuestionAnsweringManager(matching_engine, question_log_access)
++ client = InteractiveConsoleClient(manager)
++ client.run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>378</y>
+      <w>399</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>QuestionAnsweringManager
+--
+- matching_engine : MatchingEngine
+- log_access : QuestionLogAccess
+--
++ __init__()
+- log_asked_question(question)
++ answer_question(question_text) : tuple(match_question, max_score)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>637</x>
+      <y>399</y>
+      <w>329</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>MatchingEngine
+--
+- question_catalogue_access: QuestionCatalogueAccess
+--
++ __init__()
++ get_matching_question(question) : tuple(match_question, max_score)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>574</y>
+      <w>266</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>QuestionCatalogueAccess
+--
+- file_name_path : json_data_file
+--
++ __init__()
++ get_question_catalogue() : list(question_catalogue)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>609</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>QuestionLogAccess
+--
+- file_name_path : asked_questions_log.txt
+--
++ __init__()
++ store_asked_question(question)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>637</x>
+      <y>147</y>
+      <w>329</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>InteractiveConsoleClient
+--
++ manager ; QuestionAnsweringManager
++ WELCOME_MESSAGE : str
++ GOODBYE_MESSAGE : str
++ QUESTION_PROMPT : str
++ NO_ANSWER_MESSAGE : str
++ ANSWER_TEMPLATE : str
+--
++ __init__()
++ run()
+# read_and_answer_question() : bool
+# read_question() : str(question)
+# answer_question(question_text) : str(answer)
+# show_answer(candidate) : str(answer)
+# show_no_answer() : str(answer)
+# show(message) : str(message)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>231</y>
+      <w>133</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;create&gt;&gt;
+&lt;&lt;activate&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>294</y>
+      <w>56</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;create&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>427</y>
+      <w>133</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>462</y>
+      <w>49</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>231</x>
+      <y>483</y>
+      <w>49</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>637</y>
+      <w>63</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;.
+&lt;&lt;get data&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>742</y>
+      <w>210</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;data_class&gt;&gt;
+Asked_Question_Store
+--
++ question : str
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>231</x>
+      <y>672</y>
+      <w>63</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;.
+&lt;&lt;log data&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1057</x>
+      <y>399</y>
+      <w>245</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Utils
+--
++ strip_punctuation(text) : str
++ text_to_words(text) : list
++ words_to_lowercase(words) : list
++ jaccard_similarity_score(items1, items2) : float
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>959</x>
+      <y>427</y>
+      <w>112</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>483</y>
+      <w>287</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;use&gt;&gt;
+</panel_attributes>
+    <additional_attributes>390.0;190.0;10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
